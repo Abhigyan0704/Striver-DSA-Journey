@@ -23,20 +23,98 @@
 // Variation 1: else if
 // =======================
 
-#include<iostream>
-using namespace std;
-int main() {
-    int x;
-    cout << "enter your age : ";
-    cin >> x;
-    if (x>=18) {
-        cout << "you are an adult";
-    }
-    else if(x<18) {
-        cout << "you are not an adult";
-    }
-    return 0;
-}
+// #include<iostream>
+// using namespace std;
+// int main() {
+//     int x;
+//     cout << "enter your age : ";
+//     cin >> x;
+//     if (x>=18) {
+//         cout << "you are an adult";
+//     }
+//     else if(x<18) {         <---can give 'if' statement inside 'else'. if we dont, it take everything other than condition given in 'if'
+//         cout << "you are not an adult";
+//     }
+//     return 0;
+// }
 
+//****NOTE****    if we dont give 'else' statement after 'if'        OR       if we give 'else' statement after 'if', with no condition
+//                                           BOTH THE CASES WILL FUNCTION SIMILARLY (logic laga)
+//****NOTE****    if at line 35, statement was else if(x<10), and input was 15, then no output will come out
 
+// ========================
+//        QUESTION
+// ========================
 
+/*
+A school has following rules for grading system:
+a. Below 25 - F
+b. 25 to 44 - E
+c. 45 to 49 - D
+d. 50 to 59 - C
+e. 60 to 79 - B
+f. 80 to 100 - A
+Ask user to enter marks and print the corresponding grade.
+*/
+
+// ==================
+// ANSWER (first way) (time consuming approach)
+// ==================
+
+// #include<iostream>
+// using namespace std;
+// int main() {
+//     int x;
+//     cout << "Enter your marks: ";
+//     cin >> x;
+//     if (x<25) {
+//         cout << "F";
+//     }
+//     if (x>=25 && x<45) {
+//         cout << "E";                                   There is a huge problem in this method, because it has mutliple 'if's
+//     }                                        <-------- even if your input is 24, output will be F, but computer will check 
+//     if (x>=45 && x<50) {                               for all the 'if's given below, consuming more time.
+//         cout << "D";
+//     }
+//     if (x>=50 && x<60) {
+//         cout << "C";
+//     }
+//     if (x>=60 && x<80) {                    <--------- Also, see the syntax, for multiple conditions, use '&&'
+//         cout << "B";
+//     }
+//     if (x>=80 && x<=100) {
+//         cout << "outstanding, Grade A";
+//     }
+//     return 0;
+// }
+
+// ===================
+// ANSWER (second way)(else if)
+// ===================
+
+// #include<iostream>
+// using namespace std;
+// int main() {
+//     int x;
+//     cout << "Enter your marks: ";
+//     cin >> x;
+//     if (x<25) {
+//         cout << "F";
+//     }
+//     else if (x<45) {
+//         cout << "E";
+//     }                                 
+//     else if (x<50) {                                    Notice how only one side boundary is given, it is because the other                      
+//         cout << "D";                         <--------- boundary has been already checked in previous 'else if's
+//     }                                                   so computer only run the code till there, where cout satisfies.
+//     else if (x<60) {
+//         cout << "C";
+//     }
+//     else if (x<80) {
+//         cout << "B";
+//     }
+//     else if (x<=100) {
+//         cout << "outstanding, Grade A";
+//     }
+//     return 0;
+// }

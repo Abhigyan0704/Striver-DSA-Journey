@@ -1,1 +1,11 @@
 **/.DS_Store
+# Compiled Binaries (Mac/Linux)
+basics
+a.out
+*.out
+
+# Compiled Binaries (Windows)
+*.exe
+
+# IDE and Compiler clutter
+*.dSYM/

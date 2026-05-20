@@ -118,3 +118,94 @@ Ask user to enter marks and print the corresponding grade.
 //     }
 //     return 0;
 // }
+
+//======================
+//      QUESTION
+//======================
+
+/*
+Take the age from the user and then decide accordingly:
+1. If age < 18,
+   print-> "not eligible for job"
+2. If age >= 18 and age <= 54,
+   print-> "eligible for job"
+3. If age >= 55 and age <= 57,
+   print-> "eligible for job, but retirement soon."
+4. If age > 57
+   print-> "retirement time"
+*/
+
+//======================
+//ANSWER(with proper end limits)
+//======================
+
+// #include<iostream>
+// using namespace std;
+// int main() {
+//     int x;
+//     cout << "Enter your age::";
+//     cin >> x;
+//     if (x<18) {
+//         cout << "not eligible for job";
+//     }
+//     else if (x>=18 && x<=54) {
+//         cout << "eligible for job";
+//     }
+//     else if (x >= 55 && x<=57) {
+//         cout << "eligible for job, but retirement soon.";
+//     }
+//     else if (x>57) {
+//         cout << "retirement time..";
+//     }
+//     return 0;
+// }
+
+// ==================
+// ANSWER (condensed)
+// ==================
+
+// #include<iostream>  
+// using namespace std;
+// int main() {
+//     int x;
+//     cout << "Enter your age::";
+//     cin >> x;
+//     if (x<18) {
+//         cout << "not eligible for job";
+//     }
+//     else if (x<=54) {
+//         cout << "eligible for job";
+//     }
+//     else if (x<=57) {
+//         cout << "eligible for job, but retirement soon.";
+//     }
+//     else {
+//         cout << "retirement time..";
+//     }
+//     return 0;
+// }
+
+// ====================
+// ANSWER(NESTED IF, the OG method)
+// ====================
+
+#include<iostream>  
+using namespace std;
+int main() {
+    int x;
+    cout << "Enter your age::";
+    cin >> x;
+    if (x<18) {
+        cout << "not eligible for job";
+    }
+    else if (x<=57) {
+        cout << "eligible for job";
+        if (x>54) {
+            cout << ", but retirement soon.";
+        }
+    }
+    else {
+        cout << "retirement time..";
+    }
+    return 0;
+}
